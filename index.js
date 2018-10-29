@@ -58,7 +58,7 @@ class Trifid {
     }
 
     return this.middleware(app).then(() => {
-      app.listen(this.config.listener.port, this.config.listener.host)
+      app.listen((process.env.PORT || this.config.listener.port), this.config.listener.host)
 
       console.log('listening on: ' + (this.config.listener.host || '*') + ':' + (process.env.PORT || this.config.listener.port))
 
